@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ragni Shukla — Product Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Syne:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0c10;
+  --surface: #13131a;
+  --surface2: #1a1a24;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.13);
+  --text: #f0ede8;
+  --text2: rgba(240,237,232,0.55);
+  --text3: rgba(240,237,232,0.28);
+  --accent: #ff5c35;
+  --accent2: #7c6af7;
+  --accent3: #35c4ff;
+  --gold: #f5c842;
+  --green: #2dcc8f;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Syne', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.6;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.3;mix-blend-mode:overlay}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:18px 56px;background:rgba(12,12,16,.75);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.nav-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pdot 2s ease-in-out infinite}
+@keyframes pdot{0%,100%{box-shadow:0 0 0 0 rgba(255,92,53,.4)}50%{box-shadow:0 0 0 6px rgba(255,92,53,0)}}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;padding:7px 16px;border:1px solid rgba(255,92,53,.4);color:var(--accent);cursor:pointer;transition:all .2s;text-decoration:none}
+.nav-cta:hover{background:var(--accent);color:#fff}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:80px}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(255,92,53,.16) 0%,transparent 70%);top:-150px;right:-100px;animation:od1 14s ease-in-out infinite}
+.orb2{width:600px;height:600px;background:radial-gradient(circle,rgba(124,106,247,.13) 0%,transparent 70%);bottom:-100px;left:50px;animation:od2 18s ease-in-out infinite}
+.orb3{width:350px;height:350px;background:radial-gradient(circle,rgba(53,196,255,.1) 0%,transparent 70%);top:45%;left:42%;animation:od3 11s ease-in-out infinite}
+@keyframes od1{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,50px)}}
+@keyframes od2{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-70px)}}
+@keyframes od3{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%)}
+.hero-inner{position:relative;z-index:10;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px;padding:80px;width:100%;max-width:1400px;margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,92,53,.3);padding:6px 14px;margin-bottom:28px;opacity:0;animation:fu .5s .1s forwards}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-name{font-family:var(--serif);font-size:clamp(58px,7.5vw,100px);font-weight:900;line-height:.88;letter-spacing:-.04em;margin-bottom:24px;opacity:0;animation:fu .6s .25s forwards}
+.hero-name .l1{display:block}
+.hero-name .l2{display:block;font-style:italic;background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-role{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-bottom:20px;opacity:0;animation:fu .6s .4s forwards}
+.hero-desc{font-family:var(--serif);font-size:18px;font-weight:300;font-style:italic;color:var(--text2);line-height:1.75;max-width:500px;margin-bottom:40px;opacity:0;animation:fu .6s .55s forwards}
+.hero-desc strong{color:var(--text);font-weight:700;font-style:normal}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fu .6s .7s forwards}
+.btn-fire{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:#fff;text-decoration:none;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.btn-fire:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(255,92,53,.35)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--text);text-decoration:none;border:1px solid var(--border2);transition:all .2s}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+
+/* HERO RIGHT */
+.hero-right{opacity:0;animation:fu .7s .9s forwards}
+.float-card{background:var(--surface);border:1px solid var(--border2);border-radius:18px;padding:24px;position:relative;overflow:hidden}
+.float-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
+.stats22{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.stile{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:20px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;cursor:default}
+.stile:hover{transform:translateY(-3px);border-color:var(--border2)}
+.stile::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.stile:hover::after{transform:scaleX(1)}
+.snum{font-family:var(--serif);font-size:42px;font-weight:900;line-height:1;color:var(--text);margin-bottom:4px}
+.snum .a{color:var(--accent)}
+.slbl{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text3)}
+.live-bar{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;animation:ld 2s ease-in-out infinite}
+@keyframes ld{0%,100%{box-shadow:0 0 8px var(--green),0 0 0 0 rgba(45,204,143,.4)}50%{box-shadow:0 0 8px var(--green),0 0 0 8px rgba(45,204,143,0)}}
+.live-txt{font-family:var(--mono);font-size:11px;color:var(--text2);letter-spacing:.04em}
+.live-txt strong{color:var(--green)}
+
+/* SECTIONS */
+.sec-wrap{padding:120px 0;border-top:1px solid var(--border)}
+.sec-wrap.alt{background:var(--surface)}
+.sec-inner{max-width:1400px;margin:0 auto;padding:0 80px}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+.sec-title{font-family:var(--serif);font-weight:900;font-size:clamp(36px,4.5vw,60px);line-height:1;letter-spacing:-.03em;margin-bottom:16px}
+.sec-sub{font-size:16px;color:var(--text2);max-width:520px;margin-bottom:64px;line-height:1.7}
+
+/* CASE CARDS */
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ccard{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:38px;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .4s;cursor:default}
+.ccard::before{content:'';position:absolute;inset:0;border-radius:20px;background:linear-gradient(135deg,rgba(255,92,53,.07) 0%,transparent 60%);opacity:0;transition:opacity .4s}
+.ccard::after{content:'';position:absolute;top:-1px;right:-1px;width:56px;height:56px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);border-radius:0 20px 0 0;opacity:0;transition:opacity .3s}
+.ccard:hover{transform:translateY(-8px);border-color:rgba(255,92,53,.28);box-shadow:0 32px 80px rgba(0,0,0,.45)}
+.ccard:hover::before,.ccard:hover::after{opacity:1}
+.ccard.feat{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:48px;background:linear-gradient(135deg,var(--surface) 0%,rgba(124,106,247,.05) 100%)}
+.ccard.feat:hover{border-color:rgba(124,106,247,.3);box-shadow:0 32px 80px rgba(0,0,0,.45),0 0 0 1px rgba(124,106,247,.1)}
+.ccard.feat::before{background:linear-gradient(135deg,rgba(124,106,247,.08) 0%,transparent 60%)}
+.ccard.feat::after{border-color:var(--accent2)}
+.cicon{width:54px;height:54px;border-radius:14px;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px;transition:transform .3s}
+.ccard:hover .cicon{transform:scale(1.1) rotate(-5deg)}
+.cco{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ccard.feat .cco{color:var(--accent2)}
+.ctitle{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.02em;margin-bottom:14px}
+.ccard.feat .ctitle{font-size:30px}
+.cprob{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:18px}
+.csl{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:8px;margin-top:16px}
+.csol{font-size:13px;color:var(--text);line-height:1.65}
+.metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.mpill{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:10px 14px}
+.mpill .mv{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1;display:block}
+.ccard.feat .mpill .mv{color:var(--accent2)}
+.mpill .ml{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);display:block;margin-top:3px}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:18px}
+.tag{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;border:1px solid var(--border);color:var(--text3);transition:all .2s}
+.ccard:hover .tag{border-color:rgba(255,92,53,.2);color:var(--text2)}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1}
+.story-glow{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 50%,rgba(124,106,247,.07) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(255,92,53,.05) 0%,transparent 70%);pointer-events:none}
+.story-text{font-size:17px;line-height:1.8;color:var(--text2)}
+.story-text p+p{margin-top:20px}
+.story-text strong{color:var(--text);font-weight:700}
+.pullquote{font-family:var(--serif);font-size:24px;font-weight:400;font-style:italic;line-height:1.45;color:var(--text);padding:28px 36px;margin-top:36px;background:var(--surface2);border-radius:16px;border:1px solid var(--border);position:relative}
+.pullquote::before{content:'"';position:absolute;top:-24px;left:28px;font-size:90px;line-height:1;color:var(--accent);opacity:.25;font-family:var(--serif);font-style:normal}
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:0;top:14px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),var(--accent2),transparent);opacity:.35}
+.tli{position:relative;margin-bottom:36px;opacity:0;transform:translateX(16px);transition:all .5s}
+.tli.vis{opacity:1;transform:translateX(0)}
+.tldot{position:absolute;left:-34px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent);transition:all .3s}
+.tli:hover .tldot{background:var(--accent);box-shadow:0 0 16px rgba(255,92,53,.5)}
+.tli:last-child .tldot{background:var(--accent2);border-color:var(--accent2);box-shadow:0 0 16px rgba(124,106,247,.5);animation:pp3 2s ease-in-out infinite}
+@keyframes pp3{0%,100%{box-shadow:0 0 16px rgba(124,106,247,.5)}50%{box-shadow:0 0 28px rgba(124,106,247,.85)}}
+.tlyr{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;color:var(--accent);margin-bottom:4px}
+.tli:last-child .tlyr{color:var(--accent2)}
+.tlrole{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.tldesc{font-size:13px;color:var(--text3);line-height:1.6}
+
+/* SKILLS */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.scard{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s;cursor:default}
+.scard::before{content:'';position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .3s}
+.scard:nth-child(1)::before{background:radial-gradient(circle at 0% 0%,rgba(255,92,53,.09) 0%,transparent 60%)}
+.scard:nth-child(2)::before{background:radial-gradient(circle at 0% 0%,rgba(124,106,247,.09) 0%,transparent 60%)}
+.scard:nth-child(3)::before{background:radial-gradient(circle at 0% 0%,rgba(53,196,255,.09) 0%,transparent 60%)}
+.scard:nth-child(4)::before{background:radial-gradient(circle at 0% 0%,rgba(245,200,66,.09) 0%,transparent 60%)}
+.scard:nth-child(5)::before{background:radial-gradient(circle at 0% 0%,rgba(45,204,143,.09) 0%,transparent 60%)}
+.scard:nth-child(6)::before{background:radial-gradient(circle at 0% 0%,rgba(255,92,53,.09) 0%,transparent 60%)}
+.scard:hover{transform:translateY(-4px);border-color:var(--border2)}
+.scard:hover::before{opacity:1}
+.sibox{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;position:relative;z-index:1}
+.si1{background:rgba(255,92,53,.12)}.si2{background:rgba(124,106,247,.12)}.si3{background:rgba(53,196,255,.12)}.si4{background:rgba(245,200,66,.12)}.si5{background:rgba(45,204,143,.12)}.si6{background:rgba(255,92,53,.12)}
+.sname{font-family:var(--sans);font-size:15px;font-weight:700;margin-bottom:12px;position:relative;z-index:1}
+.schips{display:flex;flex-wrap:wrap;gap:5px;position:relative;z-index:1}
+.chip{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.04em;padding:3px 9px;border-radius:100px;background:var(--surface2);border:1px solid var(--border);color:var(--text3);transition:all .2s}
+.scard:hover .chip{color:var(--text2)}
+
+/* TEMPLATES */
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tcard{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:30px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.tcard:hover{border-color:var(--border2);transform:translateY(-3px)}
+.thead{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.ticon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ti1{background:rgba(10,102,194,.2)}.ti2{background:rgba(255,92,53,.15)}.ti3{background:rgba(45,204,143,.15)}.ti4{background:rgba(124,106,247,.15)}
+.ttype{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.ttitle{font-size:15px;font-weight:700}
+.tbody{font-size:13px;line-height:1.75;color:var(--text2);white-space:pre-line;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:16px;max-height:196px;overflow-y:auto}
+.tbody::-webkit-scrollbar{width:4px}
+.tbody::-webkit-scrollbar-track{background:transparent}
+.tbody::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.cbtn{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--surface);color:var(--text2);border:1px solid var(--border);border-radius:8px;padding:9px 18px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:7px}
+.cbtn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cbtn.ok{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 80px}
+.finner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.fname{font-family:var(--serif);font-size:24px;font-weight:700}
+.fname span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.flinks{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
+.flinks a{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--text3);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--accent)}
+.fnote{font-family:var(--mono);font-size:10px;color:var(--text3)}
+
+/* ANIMATE */
+@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.reveal.vis{opacity:1;transform:translateY(0)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--surface2);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+@media(max-width:960px){
+  nav{padding:16px 24px}.nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;padding:60px 24px}
+  .hero-right{display:none}
+  .sec-inner{padding:0 24px}
+  .case-grid,.ccard.feat,.story-grid,.skill-grid,.tgrid{grid-template-columns:1fr}
+  footer{padding:40px 24px}.finner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><div class="nav-dot"></div>Ragni Shukla</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#templates">Templates</a></li>
+  </ul>
+  <a href="mailto:ragnishukla7110@gmail.com" class="nav-cta">Hire Me →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
+  <div class="grid-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">QA → Product Manager · Open to APM Roles</div>
+      <h1 class="hero-name"><span class="l1">Ragni</span><span class="l2">Shukla</span></h1>
+      <p class="hero-role">Associate Product Manager · Ahmedabad, India</p>
+      <p class="hero-desc"><strong>4+ years inside Agile product teams.</strong> Writing acceptance criteria, surfacing gaps, leading UAT. Now building original product solutions for India's fastest-growing consumer brands.</p>
+      <div class="hero-btns">
+        <a href="#work" class="btn-fire">View Case Studies →</a>
+        <a href="mailto:ragnishukla7110@gmail.com" class="btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="float-card">
+        <div class="stats22">
+          <div class="stile"><div class="snum"><span class="a">4</span>+</div><div class="slbl">Years in Product Teams</div></div>
+          <div class="stile"><div class="snum"><span class="a">5</span></div><div class="slbl">Case Studies Built</div></div>
+          <div class="stile"><div class="snum" style="font-size:32px"><span class="a">SF</span></div><div class="slbl">Salesforce Certified</div></div>
+          <div class="stile"><div class="snum"><span class="a">0</span></div><div class="slbl">Days Without New Ideas</div></div>
+        </div>
+        <div class="live-bar">
+          <div class="live-dot"></div>
+          <div class="live-txt"><strong>Actively open</strong> to APM &amp; Product Analyst roles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="sec-wrap" id="work">
+<div class="sec-inner">
+  <div class="eyebrow reveal">01 — Case Studies</div>
+  <h2 class="sec-title reveal">Product thinking<br><em style="font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">in the wild.</em></h2>
+  <p class="sec-sub reveal">Self-initiated studies on real user problems with defined specs and success metrics. No assignments. No prompts. Just product curiosity.</p>
+  <div class="case-grid">
+
+    <div class="ccard feat reveal">
+      <div>
+        <div class="cicon">🏍</div>
+        <div class="cco">Rapido · Ride-Hailing · Featured</div>
+        <h3 class="ctitle">Safety Suite & Women Rider Expansion</h3>
+        <p class="cprob">No visible safety compliance signal for captains, women segment unaddressed — a trust deficit suppressing both supply and demand growth.</p>
+        <div class="metrics">
+          <div class="mpill"><span class="mv">20–25%</span><span class="ml">Women DAU uplift</span></div>
+          <div class="mpill"><span class="mv">100%</span><span class="ml">Captain compliance</span></div>
+        </div>
+        <div class="tags"><span class="tag">Safety</span><span class="tag">Trust</span><span class="tag">Women-First</span><span class="tag">Brand</span></div>
+      </div>
+      <div>
+        <div class="csl">The Problem</div>
+        <p class="csol" style="color:var(--text2)">No visible safety standard for captains. Women users had no trust signal or safe infrastructure on either side of the marketplace.</p>
+        <div class="csl">The Solution</div>
+        <p class="csol">Branded yellow helmet protocol — logo + color = moving safety signal. In-app photo verification pre-ride. Women Rider Track: women-only captain onboarding, SOS dashboard, trusted contacts, women-preferred filter.</p>
+        <div class="csl">Success Metrics</div>
+        <p class="csol" style="color:var(--text2)">Helmet compliance rate · Women captain activation · Women DAU · SOS frequency · Trust NPS delta</p>
+      </div>
+    </div>
+
+    <div class="ccard reveal">
+      <div class="cicon">🍱</div>
+      <div class="cco">Swiggy · Food Delivery</div>
+      <h3 class="ctitle">Tiffin / Ghar Ka Khana Vertical</h3>
+      <p class="cprob">No dedicated homely meal section for daily working professionals — massive unmet habit with higher retention potential than one-off orders.</p>
+      <div class="csl">Solution</div>
+      <p class="csol">'Tiffin' vertical with local home chef onboarding, cuisine filters, trust ratings, and meal subscription plans for weekly habits.</p>
+      <div class="metrics">
+        <div class="mpill"><span class="mv" style="font-size:18px">Daily</span><span class="ml">Habit-loop use case</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">↑ LTV</span><span class="ml">vs one-off orders</span></div>
+      </div>
+      <div class="tags"><span class="tag">Retention</span><span class="tag">New Vertical</span><span class="tag">DAU</span></div>
+    </div>
+
+    <div class="ccard reveal">
+      <div class="cicon">🎧</div>
+      <div class="cco">boAt · Consumer Electronics</div>
+      <h3 class="ctitle">Personalisation Ecosystem — boAt ID</h3>
+      <p class="cprob">boAt positioned only on price — no identity layer. High Gen Z churn risk as competitors close the hardware gap.</p>
+      <div class="csl">Solution</div>
+      <p class="csol">boAt ID: customisable skins, mood-based EQ profiles, AI design studio, community voting for launches — hardware into a co-creation platform.</p>
+      <div class="metrics">
+        <div class="mpill"><span class="mv" style="font-size:18px">↑ LTV</span><span class="ml">Repeat purchase rate</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">UGC</span><span class="ml">Community content</span></div>
+      </div>
+      <div class="tags"><span class="tag">Personalisation</span><span class="tag">Community</span><span class="tag">LTV</span></div>
+    </div>
+
+    <div class="ccard reveal">
+      <div class="cicon">⚡</div>
+      <div class="cco">Zepto · Quick Commerce</div>
+      <h3 class="ctitle">Dynamic ETA & Retention Loop</h3>
+      <p class="cprob">Aspirational 10-min ETAs eroding trust. No recovery for missed windows — converting failures into permanent churn.</p>
+      <div class="csl">Solution</div>
+      <p class="csol">Real-time ETA engine using dark store load + traffic data. Auto store credit for missed windows. Personalised reorder nudges from purchase history.</p>
+      <div class="metrics">
+        <div class="mpill"><span class="mv">~12%</span><span class="ml">Basket size uplift</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">↓ Churn</span><span class="ml">via recovery flow</span></div>
+      </div>
+      <div class="tags"><span class="tag">Retention</span><span class="tag">Trust</span><span class="tag">Personalisation</span></div>
+    </div>
+
+    <div class="ccard reveal" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:48px">
+      <div>
+        <div class="cicon">🚗</div>
+        <div class="cco">Ola / Uber · Ride-Hailing</div>
+        <h3 class="ctitle">Women-First Ride Mode</h3>
+        <p class="cprob">Persistent safety gaps suppressing adoption among women passengers and limiting women driver supply — the largest unaddressed trust deficit in the category.</p>
+        <div class="tags"><span class="tag">Safety</span><span class="tag">Inclusion</span><span class="tag">Supply Growth</span><span class="tag">Trust NPS</span></div>
+      </div>
+      <div>
+        <div class="csl">Solution</div>
+        <p class="csol">Women-First Mode: female-driver filter, safe pickup/drop zone mapping, live audio opt-in, panic button, route anomaly alerts, in-app safe journey score.</p>
+        <div class="csl">Success Metrics</div>
+        <div class="metrics" style="flex-direction:column;gap:8px;margin-top:12px">
+          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Women driver activation</span><span class="ml">Supply metric</span></div>
+          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Women passenger retention</span><span class="ml">Demand metric</span></div>
+          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Platform trust NPS</span><span class="ml">Brand metric</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- STORY -->
+<div class="sec-wrap alt" id="story" style="position:relative;overflow:hidden">
+  <div class="story-glow"></div>
+  <div class="sec-inner">
+    <div class="eyebrow reveal">02 — My Story</div>
+    <h2 class="sec-title reveal" style="color:var(--text)">Why Product.<br><em style="font-style:italic;color:var(--accent)">Why Now.</em></h2>
+    <div class="story-grid">
+      <div>
+        <div class="story-text reveal">
+          <p>I spent 4 years being the last person who touched a product before a real user did. Every bug I caught was a product decision made without enough user empathy. Every edge case I documented was a gap in the original thinking.</p>
+          <p>Over time, I stopped asking <strong>"does it work?"</strong> and started asking <strong>"should it exist — and does it actually delight the person using it?"</strong></p>
+          <p>That shift drove me to build case studies for Swiggy, Rapido, Zepto, and boAt. Not for an assignment. Just because I couldn't stop seeing the gaps.</p>
+          <p>I bring Salesforce depth most PMs lack, technical fluency that earns engineering trust, and 4 years of understanding exactly how products fail.</p>
+          <p><strong>I'm not transitioning away from QA. I'm graduating from it.</strong></p>
+        </div>
+        <blockquote class="pullquote reveal">"The best PMs I know were obsessed with the product long before they had the title."</blockquote>
+      </div>
+      <div class="timeline">
+        <div class="tli"><div class="tldot"></div><div class="tlyr">2017 – 2021</div><div class="tlrole">B.Tech ECE — BVM Engineering</div><div class="tldesc">Built analytical foundations. Learned systems thinking from the ground up.</div></div>
+        <div class="tli"><div class="tldot"></div><div class="tlyr">Jul 2021 – Jul 2024</div><div class="tlrole">QA Engineer — Tatvasoft</div><div class="tldesc">Embedded in Agile product teams. Built automation frameworks. Learned how products break — and why.</div></div>
+        <div class="tli"><div class="tldot"></div><div class="tlyr">Jul 2024 – Dec 2025</div><div class="tlrole">Senior QA Engineer — Tatvasoft</div><div class="tldesc">Led product discovery conversations. Surfaced feature-level improvements. Mentored 3 engineers. Crossed the QA–PM boundary.</div></div>
+        <div class="tli"><div class="tldot"></div><div class="tlyr">Jan 2026 – Present</div><div class="tlrole">Salesforce QA Engineer — Astound Digital</div><div class="tldesc">Leading UAT with enterprise clients. Writing acceptance criteria. Owning product quality across Sales Cloud, Service Cloud, and CPQ.</div></div>
+        <div class="tli"><div class="tldot"></div><div class="tlyr">Next →</div><div class="tlrole" style="color:var(--accent2)">Associate Product Manager</div><div class="tldesc">Ready to own the roadmap. Not just validate it.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="sec-wrap" id="skills">
+<div class="sec-inner">
+  <div class="eyebrow reveal">03 — Skills</div>
+  <h2 class="sec-title reveal">What I bring<br><em style="font-style:italic;color:var(--accent)">to the table.</em></h2>
+  <div class="skill-grid">
+    <div class="scard reveal"><div class="sibox si1">🗺</div><div class="sname">Product Management</div><div class="schips"><span class="chip">PRD Writing</span><span class="chip">User Stories</span><span class="chip">Acceptance Criteria</span><span class="chip">RICE Scoring</span><span class="chip">MoSCoW</span><span class="chip">Roadmaps</span><span class="chip">KPI Definition</span><span class="chip">Gap Analysis</span></div></div>
+    <div class="scard reveal"><div class="sibox si2">🔬</div><div class="sname">Research & Strategy</div><div class="schips"><span class="chip">User Journey Mapping</span><span class="chip">Competitive Analysis</span><span class="chip">Consumer Behaviour</span><span class="chip">Funnel Analysis</span><span class="chip">Market Sizing</span><span class="chip">Insight Generation</span></div></div>
+    <div class="scard reveal"><div class="sibox si3">☁</div><div class="sname">Salesforce Platform</div><div class="schips"><span class="chip">Sales Cloud</span><span class="chip">Service Cloud</span><span class="chip">CPQ</span><span class="chip">Omni-Channel</span><span class="chip">Flows</span><span class="chip">Validation Rules</span><span class="chip">Reports & Dashboards</span></div></div>
+    <div class="scard reveal"><div class="sibox si4">⚙</div><div class="sname">Technical Skills</div><div class="schips"><span class="chip">API Testing</span><span class="chip">Postman</span><span class="chip">Swagger</span><span class="chip">Katalon Studio</span><span class="chip">Selenium</span><span class="chip">GitHub</span><span class="chip">GitLab</span></div></div>
+    <div class="scard reveal"><div class="sibox si5">⚡</div><div class="sname">Agile & Delivery</div><div class="schips"><span class="chip">Agile-Scrum</span><span class="chip">JIRA</span><span class="chip">Sprint Planning</span><span class="chip">Backlog Grooming</span><span class="chip">UAT Facilitation</span><span class="chip">Release Management</span></div></div>
+    <div class="scard reveal"><div class="sibox si6">🤝</div><div class="sname">Soft Skills</div><div class="schips"><span class="chip">Stakeholder Management</span><span class="chip">Cross-functional Collab</span><span class="chip">Client Communication</span><span class="chip">Mentoring</span><span class="chip">Structured Problem Solving</span></div></div>
+  </div>
+</div>
+</div>
+
+<!-- TEMPLATES -->
+<div class="sec-wrap alt" id="templates">
+<div class="sec-inner">
+  <div class="eyebrow reveal">04 — Outreach Templates</div>
+  <h2 class="sec-title reveal">Ready-to-use<br><em style="font-style:italic;color:var(--accent)">scripts.</em></h2>
+  <p class="sec-sub reveal">Copy word-for-word. Personalise the [brackets]. Send today.</p>
+  <div class="tgrid">
+
+    <div class="tcard reveal">
+      <div class="thead"><div class="ticon ti1">💼</div><div><div class="ttype">LinkedIn Post</div><div class="ttitle">Swiggy Case Study</div></div></div>
+      <div class="tbody" id="t1">I've been thinking about why Swiggy hasn't built a proper Tiffin vertical yet.
+
+Working professionals want ghar ka khana every day — not restaurant food. But there's no dedicated home chef discovery, no subscription plan, no trust system built around daily home cooking.
+
+So I built the product spec for it:
+→ A 'Tiffin' vertical with local home chef onboarding
+→ Cuisine + meal-type filters (no maida, Jain, high-protein)
+→ Trust ratings based on hygiene + taste reviews
+→ Weekly subscription for daily meals
+
+The habit loop is stronger than any restaurant order. The retention is higher. The emotional brand connection is deeper.
+
+Building product case studies like this as I transition into APM roles. Would love feedback from PMs in the food/consumer space 🙏
+
+#ProductManagement #APM #Swiggy #ProductThinking</div>
+      <button class="cbtn" onclick="cp('t1',this)">⊕ Copy Post</button>
+    </div>
+
+    <div class="tcard reveal">
+      <div class="thead"><div class="ticon ti2">📨</div><div><div class="ttype">Cold DM</div><div class="ttitle">Message a PM</div></div></div>
+      <div class="tbody" id="t2">Hi [Name],
+
+I came across your profile while researching the PM team at [Company]. Your work on [specific feature] really resonated with me.
+
+I'm a QA engineer with 4+ years in Agile product teams, transitioning to APM. I've built a product case study specifically for [Company] — [one sentence on your idea].
+
+Would you be open to a 15-minute call? I'd love your honest feedback on my thinking.
+
+Happy to share the full case study before we chat.
+
+Thanks,
+Ragni</div>
+      <button class="cbtn" onclick="cp('t2',this)">⊕ Copy DM</button>
+    </div>
+
+    <div class="tcard reveal">
+      <div class="thead"><div class="ticon ti3">🤝</div><div><div class="ttype">Referral Request</div><div class="ttitle">Ask Someone You Know</div></div></div>
+      <div class="tbody" id="t3">Hi [Name],
+
+Hope you're doing well! I'm actively looking for APM / Product Analyst roles and noticed [Company] has an opening that's a strong fit.
+
+Would you be comfortable forwarding my profile to the PM hiring team or dropping a quick note to your recruiter?
+
+Portfolio: [your link]
+Role: [JD link]
+
+Even a warm intro makes a huge difference. Happy to return the favour whenever.
+
+Thanks,
+Ragni</div>
+      <button class="cbtn" onclick="cp('t3',this)">⊕ Copy Message</button>
+    </div>
+
+    <div class="tcard reveal">
+      <div class="thead"><div class="ticon ti4">🎤</div><div><div class="ttype">Interview Answer</div><div class="ttitle">"Why Product Management?"</div></div></div>
+      <div class="tbody" id="t4">I spent 4 years as the last person who touched a product before a real user did.
+
+Every bug I caught was a product decision made without enough user empathy. Every edge case I documented was a gap in the original thinking. Over time I stopped asking "does it work?" and started asking "should it exist — and does it actually delight the user?"
+
+That shift showed up practically — surfacing product inputs to PMs, contributing to sprint prioritisation, leading UAT about what the product should do, not just what it currently does.
+
+I built case studies for Swiggy, Rapido, Zepto, and boAt — not because anyone asked, but because I couldn't stop seeing the gaps.
+
+I'm not transitioning away from QA. I'm graduating from it — and bringing 4 years of knowing exactly how products fail into how I'll build products that don't.</div>
+      <button class="cbtn" onclick="cp('t4',this)">⊕ Copy Answer</button>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="finner">
+    <div class="fname">Ragni <span>Shukla</span></div>
+    <ul class="flinks">
+      <li><a href="mailto:ragnishukla7110@gmail.com">ragnishukla7110@gmail.com</a></li>
+      <li><a href="https://linkedin.com/in/ragni-shukla-52b60819b" target="_blank">LinkedIn</a></li>
+      <li><a href="tel:8320862751">+91 8320862751</a></li>
+    </ul>
+    <div class="fnote">Ahmedabad, India · Open to Remote · © 2025</div>
+  </div>
+</footer>
+
+<script>
+function cp(id, btn) {
+  navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+    const o = btn.innerHTML;
+    btn.innerHTML = '✓ Copied!'; btn.classList.add('ok');
+    setTimeout(() => { btn.innerHTML = o; btn.classList.remove('ok'); }, 2200);
+  });
+}
+
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), +(e.target.dataset.d||0));
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach((el, i) => { el.dataset.d = (i%5)*80; ro.observe(el); });
+
+const to = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.tli').forEach((t, i) => setTimeout(() => t.classList.add('vis'), i*160));
+      to.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.timeline').forEach(el => to.observe(el));
+
+const links = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('[id]').forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+  links.forEach(l => { l.style.color = l.getAttribute('href') === `#${cur}` ? 'var(--accent)' : ''; });
+}, { passive: true });
+</script>
+</body>
+</html>
