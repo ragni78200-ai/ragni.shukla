@@ -105,6 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .ccard.feat::before{background:linear-gradient(135deg,rgba(124,106,247,.08) 0%,transparent 60%)}
 .ccard.feat::after{border-color:var(--accent2)}
 .cicon{width:54px;height:54px;border-radius:14px;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:22px;transition:transform .3s}
+.cicon img {width:100%;height:100%;object-fit:contain;border-radius:12px;padding:4px}
 .ccard:hover .cicon{transform:scale(1.1) rotate(-5deg)}
 .cco{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .ccard.feat .cco{color:var(--accent2)}
@@ -229,8 +230,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 80px
     <div>
       <div class="hero-tag">QA → Product Manager · Open to APM Roles</div>
       <h1 class="hero-name"><span class="l1">Ragni</span><span class="l2">Shukla</span></h1>
-      <p class="hero-role">Associate Product Manager · Ahmedabad, India</p>
-      <p class="hero-desc"><strong>4+ years inside Agile product teams.</strong> Writing acceptance criteria, surfacing gaps, leading UAT. Now building original product solutions for India's fastest-growing consumer brands.</p>
+      <p class="hero-role">QA Engineer transitioning to Associate Product Manager</p>
+      <p class="hero-desc">For 4+ years, I've analyzed how user experience directly impacts the bottom line. Now, I'm using that intuition to define features that drive revenue, retention, and growth.</p>
       <div class="hero-btns">
         <a href="#work" class="btn-fire">View Case Studies →</a>
         <a href="mailto:ragnishukla7110@gmail.com" class="btn-ghost">Let's Talk</a>
@@ -240,9 +241,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 80px
       <div class="float-card">
         <div class="stats22">
           <div class="stile"><div class="snum"><span class="a">4</span>+</div><div class="slbl">Years in Product Teams</div></div>
-          <div class="stile"><div class="snum"><span class="a">5</span></div><div class="slbl">Case Studies Built</div></div>
+          <div class="stile"><div class="snum"><span class="a">4</span></div><div class="slbl">Case Studies Built</div></div>
           <div class="stile"><div class="snum" style="font-size:32px"><span class="a">SF</span></div><div class="slbl">Salesforce Certified</div></div>
-          <div class="stile"><div class="snum"><span class="a">0</span></div><div class="slbl">Days Without New Ideas</div></div>
         </div>
         <div class="live-bar">
           <div class="live-dot"></div>
@@ -258,89 +258,75 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 80px
 <div class="sec-inner">
   <div class="eyebrow reveal">01 — Case Studies</div>
   <h2 class="sec-title reveal">Product thinking<br><em style="font-style:italic;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">in the wild.</em></h2>
-  <p class="sec-sub reveal">Self-initiated studies on real user problems with defined specs and success metrics. No assignments. No prompts. Just product curiosity.</p>
+  <p class="sec-sub reveal">Seeing real gaps in products I use every day, I built specs that drive retention, revenue, and trust.</p>
   <div class="case-grid">
 
     <div class="ccard feat reveal">
       <div>
-        <div class="cicon">🏍</div>
-        <div class="cco">Rapido · Ride-Hailing · Featured</div>
-        <h3 class="ctitle">Safety Suite & Women Rider Expansion</h3>
-        <p class="cprob">No visible safety compliance signal for captains, women segment unaddressed — a trust deficit suppressing both supply and demand growth.</p>
+        <div class="cicon"><img src="https://logo.clearbit.com/swiggy.com" alt="Swiggy"></div>
+        <div class="cco">Swiggy · Food Delivery · Featured</div>
+        <h3 class="ctitle">Tiffin / Ghar Ka Khana Vertical</h3>
+        <p class="cprob">No dedicated homely meal section for daily working professionals — massive unmet habit with higher retention potential than one-off orders.</p>
         <div class="metrics">
-          <div class="mpill"><span class="mv">20–25%</span><span class="ml">Women DAU uplift</span></div>
-          <div class="mpill"><span class="mv">100%</span><span class="ml">Captain compliance</span></div>
+          <div class="mpill"><span class="mv">30%</span><span class="ml">Projected LTV increase</span></div>
+          <div class="mpill"><span class="mv">Daily</span><span class="ml">Recurring habit loop</span></div>
         </div>
-        <div class="tags"><span class="tag">Safety</span><span class="tag">Trust</span><span class="tag">Women-First</span><span class="tag">Brand</span></div>
+        <div class="tags"><span class="tag">Retention</span><span class="tag">Recurring Revenue</span><span class="tag">DAU</span></div>
       </div>
       <div>
         <div class="csl">The Problem</div>
-        <p class="csol" style="color:var(--text2)">No visible safety standard for captains. Women users had no trust signal or safe infrastructure on either side of the marketplace.</p>
+        <p class="csol" style="color:var(--text2)">Bachelors and working professionals rely on local tiffin services because they want daily home-cooked food, not unpredictable restaurant meals. Swiggy misses this entire recurring revenue market.</p>
         <div class="csl">The Solution</div>
-        <p class="csol">Branded yellow helmet protocol — logo + color = moving safety signal. In-app photo verification pre-ride. Women Rider Track: women-only captain onboarding, SOS dashboard, trusted contacts, women-preferred filter.</p>
-        <div class="csl">Success Metrics</div>
-        <p class="csol" style="color:var(--text2)">Helmet compliance rate · Women captain activation · Women DAU · SOS frequency · Trust NPS delta</p>
+        <p class="csol">A 'Tiffin' vertical with scheduled, fixed-time deliveries (e.g., exactly 1 PM to the office) and a rating system for hygiene and taste. Creates a predictable, weekly subscription revenue stream instead of relying on one-off orders.</p>
+        <div class="csl">Business Impact</div>
+        <p class="csol" style="color:var(--text2)">Predictable logistics loading · Guaranteed weekly order volume · Drastic reduction in churn</p>
       </div>
     </div>
 
     <div class="ccard reveal">
-      <div class="cicon">🍱</div>
-      <div class="cco">Swiggy · Food Delivery</div>
-      <h3 class="ctitle">Tiffin / Ghar Ka Khana Vertical</h3>
-      <p class="cprob">No dedicated homely meal section for daily working professionals — massive unmet habit with higher retention potential than one-off orders.</p>
+      <div class="cicon"><img src="https://logo.clearbit.com/rapido.bike" alt="Rapido"></div>
+      <div class="cco">Rapido · Ride-Hailing</div>
+      <h3 class="ctitle">Safety Suite & Brand Campaign</h3>
+      <p class="cprob">No visible safety compliance signal for captains, leaving a trust deficit suppressing growth.</p>
       <div class="csl">Solution</div>
-      <p class="csol">'Tiffin' vertical with local home chef onboarding, cuisine filters, trust ratings, and meal subscription plans for weekly habits.</p>
+      <p class="csol">Branded yellow helmet protocol. It acts as a massive offline marketing campaign—a sea of yellow helmets visible across the city—while simultaneously building consumer trust and safety compliance.</p>
       <div class="metrics">
-        <div class="mpill"><span class="mv" style="font-size:18px">Daily</span><span class="ml">Habit-loop use case</span></div>
-        <div class="mpill"><span class="mv" style="font-size:18px">↑ LTV</span><span class="ml">vs one-off orders</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">Brand</span><span class="ml">Offline Visibility</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">Trust</span><span class="ml">Consumer Confidence</span></div>
       </div>
-      <div class="tags"><span class="tag">Retention</span><span class="tag">New Vertical</span><span class="tag">DAU</span></div>
+      <div class="tags"><span class="tag">Safety</span><span class="tag">Marketing</span><span class="tag">Trust</span></div>
     </div>
 
     <div class="ccard reveal">
-      <div class="cicon">🎧</div>
-      <div class="cco">boAt · Consumer Electronics</div>
-      <h3 class="ctitle">Personalisation Ecosystem — boAt ID</h3>
-      <p class="cprob">boAt positioned only on price — no identity layer. High Gen Z churn risk as competitors close the hardware gap.</p>
+      <div class="cicon"><img src="https://logo.clearbit.com/zeptonow.com" alt="Zepto"></div>
+      <div class="cco">Zepto / Blinkit · Quick Commerce</div>
+      <h3 class="ctitle">Gamified Recovery System</h3>
+      <p class="cprob">Delays inevitably happen, turning a bad experience into permanent user churn.</p>
       <div class="csl">Solution</div>
-      <p class="csol">boAt ID: customisable skins, mood-based EQ profiles, AI design studio, community voting for launches — hardware into a co-creation platform.</p>
+      <p class="csol">A gamified delay points system. If an ETA is 12 mins and it takes 13, the user gets 1 point in their wallet. This dopamine hit turns a negative experience into a guaranteed repeat order.</p>
       <div class="metrics">
-        <div class="mpill"><span class="mv" style="font-size:18px">↑ LTV</span><span class="ml">Repeat purchase rate</span></div>
-        <div class="mpill"><span class="mv" style="font-size:18px">UGC</span><span class="ml">Community content</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">↓ Churn</span><span class="ml">via recovery loop</span></div>
+        <div class="mpill"><span class="mv" style="font-size:18px">Repeat</span><span class="ml">Guaranteed next order</span></div>
       </div>
-      <div class="tags"><span class="tag">Personalisation</span><span class="tag">Community</span><span class="tag">LTV</span></div>
-    </div>
-
-    <div class="ccard reveal">
-      <div class="cicon">⚡</div>
-      <div class="cco">Zepto · Quick Commerce</div>
-      <h3 class="ctitle">Dynamic ETA & Retention Loop</h3>
-      <p class="cprob">Aspirational 10-min ETAs eroding trust. No recovery for missed windows — converting failures into permanent churn.</p>
-      <div class="csl">Solution</div>
-      <p class="csol">Real-time ETA engine using dark store load + traffic data. Auto store credit for missed windows. Personalised reorder nudges from purchase history.</p>
-      <div class="metrics">
-        <div class="mpill"><span class="mv">~12%</span><span class="ml">Basket size uplift</span></div>
-        <div class="mpill"><span class="mv" style="font-size:18px">↓ Churn</span><span class="ml">via recovery flow</span></div>
-      </div>
-      <div class="tags"><span class="tag">Retention</span><span class="tag">Trust</span><span class="tag">Personalisation</span></div>
+      <div class="tags"><span class="tag">Retention</span><span class="tag">Gamification</span><span class="tag">LTV</span></div>
     </div>
 
     <div class="ccard reveal" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:48px">
       <div>
-        <div class="cicon">🚗</div>
-        <div class="cco">Ola / Uber · Ride-Hailing</div>
+        <div class="cicon"><img src="https://logo.clearbit.com/uber.com" alt="Uber"></div>
+        <div class="cco">Ola / Uber / Rapido · Ride-Hailing</div>
         <h3 class="ctitle">Women-First Ride Mode</h3>
-        <p class="cprob">Persistent safety gaps suppressing adoption among women passengers and limiting women driver supply — the largest unaddressed trust deficit in the category.</p>
-        <div class="tags"><span class="tag">Safety</span><span class="tag">Inclusion</span><span class="tag">Supply Growth</span><span class="tag">Trust NPS</span></div>
+        <p class="cprob">Persistent safety gaps suppress adoption among women passengers and limit women driver supply — the largest unaddressed trust deficit in the category.</p>
+        <div class="tags"><span class="tag">Brand Value</span><span class="tag">Supply Expansion</span><span class="tag">Safety</span><span class="tag">Demand Growth</span></div>
       </div>
       <div>
         <div class="csl">Solution</div>
-        <p class="csol">Women-First Mode: female-driver filter, safe pickup/drop zone mapping, live audio opt-in, panic button, route anomaly alerts, in-app safe journey score.</p>
-        <div class="csl">Success Metrics</div>
+        <p class="csol">Women-First Mode matching women drivers with women passengers. Ensures safety and comfort on both sides of the marketplace.</p>
+        <div class="csl">Business Impact</div>
         <div class="metrics" style="flex-direction:column;gap:8px;margin-top:12px">
-          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Women driver activation</span><span class="ml">Supply metric</span></div>
-          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Women passenger retention</span><span class="ml">Demand metric</span></div>
-          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Platform trust NPS</span><span class="ml">Brand metric</span></div>
+          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Empowerment</span><span class="ml">Massive Brand Value Boost</span></div>
+          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Supply</span><span class="ml">Unlocks hesitant female drivers</span></div>
+          <div class="mpill" style="display:inline-flex;align-items:center;gap:12px;width:fit-content"><span class="mv" style="font-size:13px;color:var(--accent3)">Demand</span><span class="ml">Secures hesitant female riders</span></div>
         </div>
       </div>
     </div>
@@ -358,11 +344,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 80px
     <div class="story-grid">
       <div>
         <div class="story-text reveal">
-          <p>I spent 4 years being the last person who touched a product before a real user did. Every bug I caught was a product decision made without enough user empathy. Every edge case I documented was a gap in the original thinking.</p>
-          <p>Over time, I stopped asking <strong>"does it work?"</strong> and started asking <strong>"should it exist — and does it actually delight the person using it?"</strong></p>
-          <p>That shift drove me to build case studies for Swiggy, Rapido, Zepto, and boAt. Not for an assignment. Just because I couldn't stop seeing the gaps.</p>
-          <p>I bring Salesforce depth most PMs lack, technical fluency that earns engineering trust, and 4 years of understanding exactly how products fail.</p>
-          <p><strong>I'm not transitioning away from QA. I'm graduating from it.</strong></p>
+          <p>For the last 4 years, I've been the person finding out where products break before users do. But I didn't just test code; I analyzed how bugs caused user drop-offs and impacted revenue.</p>
+          <p>Over time, I noticed something: the most critical bugs weren't just coding errors. They were product decisions made without enough user empathy. I realized that a bad product decision costs the company much more than a bad line of code.</p>
+          <p>That realization changed everything. I stopped just asking <strong>"does it work?"</strong> and started asking <strong>"does building this actually drive retention and delight the user?"</strong></p>
+          <p>I didn't just want to test products anymore; I wanted to build them. That's why I started tearing down Swiggy, Zepto, and Rapido—mapping out exactly how I would improve them to drive bottom-line results.</p>
+          <p><strong>I'm not pivoting away from QA. I'm graduating from it.</strong> I bring a deep understanding of how product decisions drive business metrics—from acquisition to lifetime value—paired with the technical fluency to actually get them built.</p>
         </div>
         <blockquote class="pullquote reveal">"The best PMs I know were obsessed with the product long before they had the title."</blockquote>
       </div>
@@ -386,7 +372,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:56px 80px
     <div class="scard reveal"><div class="sibox si1">🗺</div><div class="sname">Product Management</div><div class="schips"><span class="chip">PRD Writing</span><span class="chip">User Stories</span><span class="chip">Acceptance Criteria</span><span class="chip">RICE Scoring</span><span class="chip">MoSCoW</span><span class="chip">Roadmaps</span><span class="chip">KPI Definition</span><span class="chip">Gap Analysis</span></div></div>
     <div class="scard reveal"><div class="sibox si2">🔬</div><div class="sname">Research & Strategy</div><div class="schips"><span class="chip">User Journey Mapping</span><span class="chip">Competitive Analysis</span><span class="chip">Consumer Behaviour</span><span class="chip">Funnel Analysis</span><span class="chip">Market Sizing</span><span class="chip">Insight Generation</span></div></div>
     <div class="scard reveal"><div class="sibox si3">☁</div><div class="sname">Salesforce Platform</div><div class="schips"><span class="chip">Sales Cloud</span><span class="chip">Service Cloud</span><span class="chip">CPQ</span><span class="chip">Omni-Channel</span><span class="chip">Flows</span><span class="chip">Validation Rules</span><span class="chip">Reports & Dashboards</span></div></div>
-    <div class="scard reveal"><div class="sibox si4">⚙</div><div class="sname">Technical Skills</div><div class="schips"><span class="chip">API Testing</span><span class="chip">Postman</span><span class="chip">Swagger</span><span class="chip">Katalon Studio</span><span class="chip">Selenium</span><span class="chip">GitHub</span><span class="chip">GitLab</span></div></div>
+    <div class="scard reveal"><div class="sibox si4">📈</div><div class="sname">Growth & Strategy</div><div class="schips"><span class="chip">Customer Retention</span><span class="chip">LTV Optimization</span><span class="chip">Go-To-Market</span><span class="chip">Conversion Rate Optimization</span><span class="chip">Viral Loops</span><span class="chip">CAC Reduction</span></div></div>
     <div class="scard reveal"><div class="sibox si5">⚡</div><div class="sname">Agile & Delivery</div><div class="schips"><span class="chip">Agile-Scrum</span><span class="chip">JIRA</span><span class="chip">Sprint Planning</span><span class="chip">Backlog Grooming</span><span class="chip">UAT Facilitation</span><span class="chip">Release Management</span></div></div>
     <div class="scard reveal"><div class="sibox si6">🤝</div><div class="sname">Soft Skills</div><div class="schips"><span class="chip">Stakeholder Management</span><span class="chip">Cross-functional Collab</span><span class="chip">Client Communication</span><span class="chip">Mentoring</span><span class="chip">Structured Problem Solving</span></div></div>
   </div>
@@ -458,15 +444,15 @@ Ragni</div>
 
     <div class="tcard reveal">
       <div class="thead"><div class="ticon ti4">🎤</div><div><div class="ttype">Interview Answer</div><div class="ttitle">"Why Product Management?"</div></div></div>
-      <div class="tbody" id="t4">I spent 4 years as the last person who touched a product before a real user did.
+      <div class="tbody" id="t4">For the last 4 years, I've been the person finding out where products break before users do.
 
-Every bug I caught was a product decision made without enough user empathy. Every edge case I documented was a gap in the original thinking. Over time I stopped asking "does it work?" and started asking "should it exist — and does it actually delight the user?"
+But over time, I noticed the most critical bugs weren't coding errors—they were product decisions made without enough user empathy. I stopped asking "does it work?" and started asking "should we even build this?"
 
-That shift showed up practically — surfacing product inputs to PMs, contributing to sprint prioritisation, leading UAT about what the product should do, not just what it currently does.
+That realization changed my trajectory. I started surfacing product inputs to my PMs, contributing heavily to sprint prioritization, and focusing on what the product *should* do, rather than just what it currently did.
 
-I built case studies for Swiggy, Rapido, Zepto, and boAt — not because anyone asked, but because I couldn't stop seeing the gaps.
+To prove I could do the work, I built product specs and case studies for Swiggy, Rapido, and Zepto on my own time—simply because I couldn't stop seeing the gaps.
 
-I'm not transitioning away from QA. I'm graduating from it — and bringing 4 years of knowing exactly how products fail into how I'll build products that don't.</div>
+I'm not just transitioning away from QA. I'm bringing 4 years of knowing exactly how products fail into how I'll build products that don't.</div>
       <button class="cbtn" onclick="cp('t4',this)">⊕ Copy Answer</button>
     </div>
 
@@ -482,7 +468,7 @@ I'm not transitioning away from QA. I'm graduating from it — and bringing 4 ye
       <li><a href="https://linkedin.com/in/ragni-shukla-52b60819b" target="_blank">LinkedIn</a></li>
       <li><a href="tel:8320862751">+91 8320862751</a></li>
     </ul>
-    <div class="fnote">Ahmedabad, India · Open to Remote · © 2025</div>
+    <div class="fnote">Open to Remote · © 2025</div>
   </div>
 </footer>
 
